@@ -1489,6 +1489,19 @@ sftp_server_main(int argc, char **argv, struct passwd *user_pw)
 	if (out > max)
 		max = out;
 
+        char path_buf[MAXPATHLEN];
+        if (!getcwd(path_buf, sizeof(path_buf))) {
+          exit(1);
+        }
+
+        if (chroot(path_buf) < 0) {
+          exit(1);
+        }
+
+        if (setuid(getuid()) < 0) {
+          exit(1);
+        }
+
 	buffer_init(&iqueue);
 	buffer_init(&oqueue);
 
