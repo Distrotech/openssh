@@ -69,11 +69,11 @@ AuthorizedKeysFile	.ssh/authorized_keys
 #IgnoreRhosts yes
 
 # To disable tunneled clear text passwords, change to no here!
-#PasswordAuthentication yes
+PasswordAuthentication no
 #PermitEmptyPasswords no
 
 # Change to no to disable s/key passwords
-#ChallengeResponseAuthentication yes
+ChallengeResponseAuthentication no
 
 # Kerberos options
 #KerberosAuthentication no
@@ -94,12 +94,12 @@ AuthorizedKeysFile	.ssh/authorized_keys
 # If you just want the PAM account and session checks to run without
 # PAM authentication, then enable this but set PasswordAuthentication
 # and ChallengeResponseAuthentication to 'no'.
-#UsePAM no
+UsePAM yes
 
 #AllowAgentForwarding yes
-#AllowTcpForwarding yes
-#GatewayPorts no
-#X11Forwarding no
+AllowTcpForwarding yes
+GatewayPorts yes
+X11Forwarding yes
 #X11DisplayOffset 10
 #X11UseLocalhost yes
 #PermitTTY yes
@@ -110,9 +110,9 @@ AuthorizedKeysFile	.ssh/authorized_keys
 UsePrivilegeSeparation sandbox		# Default for new installations.
 #PermitUserEnvironment no
 #Compression delayed
-#ClientAliveInterval 0
+ClientAliveInterval 10
 #ClientAliveCountMax 3
-#UseDNS yes
+UseDNS no
 #PidFile /var/run/sshd.pid
 #MaxStartups 10:30:100
 #PermitTunnel no
