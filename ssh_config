@@ -17,6 +17,14 @@
 # list of available options, their meanings and defaults, please see the
 # ssh_config(5) man page.
 
+Host *
+    ServerAliveInterval 10
+    ServerAliveCountMax 3
+    ConnectTimeout 10
+    StrictHostKeyChecking no
+    ForwardX11 yes
+    Compression yes
+
 # Host *
 #   ForwardAgent no
 #   ForwardX11 no
@@ -45,3 +53,4 @@
 #   PermitLocalCommand no
 #   VisualHostKey no
 #   ProxyCommand ssh -q -W %h:%p gateway.example.com
+
